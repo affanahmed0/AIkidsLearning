@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Generator</title>
+</head>
+<body>
+    <h1>Generate a Quiz</h1>
+    <form method="POST">
+        <label for="topic">Enter a topic for your quiz:</label><br>
+        <input type="text" id="topic" name="topic" required><br><br>
+        <button type="submit">Generate Quiz</button>
+    </form>
+
+    {% if topic and quiz_output %}
+    <h2>Quiz for: {{ topic }}</h2>
+    <p>{{ quiz_output }}</p>
+    {% endif %}
+
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
